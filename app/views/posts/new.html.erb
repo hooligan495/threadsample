@@ -1,0 +1,15 @@
+<%= form_for [@comment, @post] do |f| %>
+  <%= hidden_field_tag :parent_id, @parent_id %>
+  <div class="field">
+    <%= f.label :name %><br/>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :body, "Body" %><br/>
+    <%= f.text_area :body %>
+  </div>
+  <div class="comment_actions">
+    <%= f.submit "Create", :disable_with => 'Creating...'%>
+  </div>
+  
+<% end %>

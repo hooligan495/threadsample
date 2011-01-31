@@ -1,0 +1,10 @@
+<article class="post">
+  <header><%= post.name %></header>
+  <p><%= post.body %></p>
+  <div class="post_actions">
+    <%= link_to "Edit", edit_comment_post_path(comment, post) %>
+    <%= link_to "Reply", new_comment_post_path(comment, :parent_id => post.id) %>
+    <%= link_to 'Delete', [comment, post], :confirm => 'Are you sure?', :method => :delete, :class => "post_button"  %>  
+    
+  </div>
+</article>

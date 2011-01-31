@@ -1,0 +1,27 @@
+
+<h1>Welcome to Comments</h1>
+
+<table>
+  <tr>
+    <th>Title</th>
+    <th>Created</th>
+    <th>Last Update</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @comments.each do |comment| %>
+  <tr>
+    <td><%= comment.title %></td>
+    <td><%= display_time(comment.created_at)%></td>
+    <td><%= display_time(comment.updated_at) %></td>
+    <td><%= link_to 'Show', comment, :class => "comment_button" %></td>
+    <td><%= link_to 'Edit', edit_comment_path(comment), :class => "comment_button" %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Comment', new_comment_path, :class => "comment_button" %>

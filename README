@@ -1,0 +1,24 @@
+Simple commenting application:
+The required user stories are:
+
+ *   As a guest (no registration/authentication required), I would like to create a comment thread.
+ *   As a guest, I would like to view a list of comment threads
+ *   As a guest, I would like to edit or delete the any comment thread
+ *   As a guest, I would like to add a post to any comment thread
+ *   As a guest, I would like to reply to any post within a comment thread
+ *   As a guest, I would like to see a list of all posts within any comment thread
+ *   As a guest, I would like to edit or delete any post within any comment thread
+ *   As a guest, I would like to view a sorted list of comment threads by date or by activity (# of posts within each thread)
+
+
+
+notes:
+  These stories lend themselves to using Cucumber to describe the features and layouts.
+
+
+  Scenario: See all comments sorted by date
+  Scenario: See all comments sorted by popularity
+
+
+---------
+Assumption. I'm not going out and getting a "forum" plugin similar to Community Engine.

@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<%= link_to 'Home', comments_path, :class => "comment_button"  %> 
+
+<article class="comment_details">
+  <header><%= @comment.title %></header>
+  <p>
+    <%= @comment.body %>
+  </p>
+  <div class="comment_action_bar">
+    <%= link_to 'Edit', edit_comment_path(@comment), :class => "comment_button"  %> 
+    <%= link_to 'Delete', @comment, :confirm => 'Are you sure?', :method => :delete, :class => "comment_button"  %>  
+    <%= link_to 'Reply', new_comment_post_path(@comment), :class => "comment_button"  %> 
+  </div>
+  <div class="responses">
+    <% @comment.posts.each do |post| %>
+      <%= render :partial => 'shared/post', :locals => {:post => post, :comment => @comment} %>
+    <% end %>
+  </div>
+</article>
+
