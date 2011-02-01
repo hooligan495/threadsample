@@ -1,12 +1,11 @@
 
 <h1>Welcome to Comments</h1>
 
-<table>
+<table class="comment_forum">
   <tr>
     <th>Title</th>
     <th>Created</th>
     <th>Last Update</th>
-    <th></th>
     <th></th>
     <th></th>
   </tr>
@@ -25,3 +24,11 @@
 <br />
 
 <%= link_to 'New Comment', new_comment_path, :class => "comment_button" %>
+
+
+
+<%= link_to_if(@sort.nil?, 'Sort by popularity', comments_path(:sort => "activity")) do
+   link_to 'Sort by date', comments_path
+   end 
+  
+  %>

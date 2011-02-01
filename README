@@ -13,12 +13,14 @@ The required user stories are:
 
 
 notes:
-  These stories lend themselves to using Cucumber to describe the features and layouts.
-
-
-  Scenario: See all comments sorted by date
-  Scenario: See all comments sorted by popularity
+  I am not using much javascript in terms of inplace editing of comments and posts, or adding new posts.  
+   It shouldn't be too much more work to add but I decided that could be a v2 feature.
+   Same goes for pagination.  Normally I'd break out will_paginate
+   
+  Also I am using all HTML5 so I have NOT tested it on IE nor done any IE support stuff.  
 
 
 ---------
-Assumption. I'm not going out and getting a "forum" plugin similar to Community Engine.
+  TODO: Add pagination to comments and posts
+  TODO: Currently times are printed out in UTC base timezone. (EST +5)  Need to grab client timezone and display that.
+  TODO: Pretty up the input forms

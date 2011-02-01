@@ -1,10 +1,16 @@
 <article class="post">
-  <header><%= post.name %></header>
+  <header><%= display_time(post.created_at) %></header>
   <p><%= post.body %></p>
+  <footer>
+   <div class="from"> posted by: <%= post.name %>
+  <% if post.parent %>
+    in response to <%= link_to post.parent.name, comment_post_path(comment, post.parent)  %> at <%= display_time(post.parent.created_at) %>
+  <% end %>
+  </div>
   <div class="post_actions">
     <%= link_to "Edit", edit_comment_post_path(comment, post) %>
     <%= link_to "Reply", new_comment_post_path(comment, :parent_id => post.id) %>
-    <%= link_to 'Delete', [comment, post], :confirm => 'Are you sure?', :method => :delete, :class => "post_button"  %>  
-    
+    <%= link_to 'Delete', [comment, post], :confirm => 'Are you sure?', :method => :delete, :class => "post_button"  %>      
   </div>
+  </footer>
 </article>

@@ -5,12 +5,19 @@ describe CommentsController do
   def mock_comment(stubs={})
     @mock_comment ||= mock_model(Comment, stubs).as_null_object
   end
-
+  
   describe "GET index" do
     it "assigns all comments as @comments" do
       Comment.stub(:all) { [mock_comment] }
       get :index
       assigns(:comments).should eq([mock_comment])
+    end
+    
+    it "should allow sorting by activity" do
+      Comment.stub(:all) { [mock_comment] }
+      get :index
+      assigns(:comments).should eq([mock_comment])
+      
     end
   end
 

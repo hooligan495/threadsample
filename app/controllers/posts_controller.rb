@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     unless params[:parent_id].blank?
       @parent_post = Post.find(params[:parent_id])
       @post = @parent_post.children.create!(params[:post])
+      @comment.posts << @post
     else
       @post = @comment.posts.create!(params[:post])
     end    
@@ -35,7 +36,7 @@ class PostsController < ApplicationController
     if @post.update_attributes(params[:post])
       @post.comment.updated_at = Time.now
       @post.comment.save!
-      respond_with([@comment, @post])
+      respond_with(@comment)
     else
       respond_with(@post, :location => edit_post_path(@post))
     end
@@ -51,6 +52,11 @@ class PostsController < ApplicationController
     @post = @comment.posts.find(params[:id])
   end
 
+  def show
+    @post = Post.find(params[:id])
+    respond_with(@post)
+    
+  end
   private 
   def find_comment
     @comment = Comment.find(params[:comment_id]) if params[:comment_id]    

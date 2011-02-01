@@ -12,10 +12,10 @@
     <%= link_to 'Delete', @comment, :confirm => 'Are you sure?', :method => :delete, :class => "comment_button"  %>  
     <%= link_to 'Reply', new_comment_post_path(@comment), :class => "comment_button"  %> 
   </div>
-  <div class="responses">
-    <% @comment.posts.each do |post| %>
-      <%= render :partial => 'shared/post', :locals => {:post => post, :comment => @comment} %>
-    <% end %>
-  </div>
 </article>
+<div class="responses">
+  <% @comment.posts.each do |post| %>
+    <%= render :partial => 'shared/post', :locals => {:post => post, :comment => @comment} %>
+  <% end %>
+</div>
 

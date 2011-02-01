@@ -1,7 +1,12 @@
 class CommentsController < ApplicationController
 
   def index
-    @comments = Comment.all
+    if (params[:sort] == "activity")
+      @sort = "activity"
+      @comments = Comment.find_by_sql("select c.*, count(*) as num from comments as c left join posts as p on c.id=p.comment_id Group By p.comment_id order by num DESC")
+    else
+      @comments = Comment.all #default sort by date
+    end
 
     respond_to do |format|
       format.html # index.html.erb

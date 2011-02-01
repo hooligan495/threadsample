@@ -10,13 +10,80 @@ section#main_area {
   height:600px;
 }
 
-
 .comment_action_bar{
   margin-top:.5em;
   
 }
+.comment_forum .comment_button {
+  font-size:.75em;
+}
 
-.comment_details#comment_button {
-  font-size:.5em;
+table {
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
   
+}
+.comment_forum {
+  width:600px;
+  border-collapse:collapse;
+}
+
+.comment_forum th {
+  
+}
+.comment_forum tr:nth-of-type(even){
+background-color: #F5F5DC;
+}
+.comment_forum tr:nth-of-type(odd) {
+background-color:#f5deb3;
+}
+
+
+.comment_details .comment_button {
+ font-size:.7em;
+}
+
+.comment_details .comment_action_bar {
+  text-align:right;
+}
+
+.comment_details {
+  background-color:#F5F5DC;
+  padding:2px;
+  margin-top:1em;
+  border-radius:5px;
+}
+
+.comment_details header {
+  background-color:#99CC32;
+  border-radius:5px;
+  text-align:center;
+  font-size:1.1em;
+}
+
+
+ .post {
+  border-radius:5px;
+  background-color:#F5F5DC;
+  margin-top:.25em;
+  margin-bottom:.25em;
+  padding-left:2px;
+}
+ .post header {
+  border-radius:5px;
+  background-color:#f5deb3;
+  padding-left:2px;
+}
+
+ .post footer {
+  font-size:.95em;
+  padding-left:2px;
+}
+
+ .post footer .from {
+  float:left;
+}
+
+ .post footer .post_actions {
+  text-align:right;
 }
